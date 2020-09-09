@@ -1,0 +1,10 @@
+[
+	{
+		"type":"Webcam",
+		"inputs":["Presenter"]
+	},
+	{
+		"type":"Presenter",
+		"inputs":["Webcam"]
+	}
+]

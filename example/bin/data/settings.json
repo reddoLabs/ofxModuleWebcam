@@ -1,0 +1,7 @@
+{
+    "Webcam": {
+        "width": 640,
+        "height": 480,
+        "streamingMethod":"pixels"
+    }
+}
