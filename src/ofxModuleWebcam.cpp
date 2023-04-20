@@ -4,14 +4,14 @@ namespace ofxModule {
     //------------------------------------------------------------------
 	ofxModuleWebcam::ofxModuleWebcam(string moduleName, string settingsPath):ModuleRunnable("Webcam", moduleName,settingsPath) {
 		
-		width = settings["width"] != nullptr ? settings["width"] : 320;
-		height = settings["height"] != nullptr ? settings["height"] : 240;
-		int framerate = settings["framerate"] != nullptr ? settings["framerate"] : 30;
-		int deviceId = settings["deviceId"] != nullptr ? settings["deviceId"] : 0;
+		width = settings["width"] != nullptr ? settings["width"].get<int>() : 320;
+		height = settings["height"] != nullptr ? settings["height"].get<int>()  : 240;
+		int framerate = settings["framerate"] != nullptr ? settings["framerate"].get<int>()  : 30;
+		int deviceId = settings["deviceId"] != nullptr ? settings["deviceId"].get<int>()  : 0;
 		string deviceName = settings["deviceName"] != nullptr ? settings["deviceName"] : "";
-		streamingMethod = settings["streamingMethod"] != nullptr && settings["streamingMethod"] == "" ? "texture" : settings["streamingMethod"];
-		isMirrorX = settings["mirrorX"] != nullptr ? settings["mirrorX"] : false;
-		isMirrorY = settings["mirrorY"] != nullptr ? settings["mirrorY"] : false;
+		streamingMethod = settings["streamingMethod"] != nullptr && settings["streamingMethod"].get<string>() == "" ? "texture" : settings["streamingMethod"].get<string>();
+		isMirrorX = settings["mirrorX"] != nullptr ? settings["mirrorX"].get<bool>()  : false;
+		isMirrorY = settings["mirrorY"] != nullptr ? settings["mirrorY"].get<bool>() : false;
 
 		auto li = grabber.listDevices();
 		if (deviceName != "") {

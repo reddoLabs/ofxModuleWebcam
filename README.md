@@ -1,4 +1,4 @@
-# ofxModuleCanon
+# ofxModuleWebcam
 
 Module for [ofxModule](https://github.com/reddoLabs/ofxModule) that allows easy control over Webcams.
 
